@@ -37,6 +37,7 @@ ul {
   column-count: 3;
   -moz-column-count: 3;
   -webkit-column-count: 3;
+  text-align: left;
 }
 
 /* Tablets */
@@ -55,18 +56,17 @@ ul {
   h1 {
     font-size: 3em;
   }
+  ul {
+    column-count: auto;
+    -moz-column-count: auto;
+    -webkit-column-count: auto;
+    list-style: none;
+  }
 }
 
 /* Smaller */
 @media (max-width: 362px) {
   h1 {
     font-size: 2.5em;
-  }
-  ul {
-    column-count: auto;
-    -moz-column-count: auto;
-    -webkit-column-count: auto;
-    list-style: none;
-    text-align: left;
   }
 }
