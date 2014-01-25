@@ -406,14 +406,15 @@ table {
 }
 
 body {
-  margin: 50px auto;
-  width: 960px;
+  margin: 0 auto;
+  max-width: 960px;
+  text-align: center;
 }
 
 h1 {
   font-family: "Raleway Dots";
-  text-align: center;
   font-size: 5em;
+  color: #999;
 }
 
 a {
@@ -425,12 +426,40 @@ a:hover {
   text-decoration: underline;
 }
 
+h1 a:hover {
+  padding-bottom: 10px;
+  text-decoration: none;
+  border-top-style: solid;
+  border-top-width: thin;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+}
+
 article img {
-  max-width: 960px;
+  max-width: 100%;
+  max-height: 60%;
 }
 
 ul {
   column-count: 3;
   -moz-column-count: 3;
   -webkit-column-count: 3;
+}
+
+/* Tablets */
+@media (max-width: 991px) {
+  body {
+    width: auto;
+    padding: 0 1em;
+  }
+  h1 {
+    font-size: 4em;
+  }
+}
+
+/* Phones */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 3em;
+  }
 }
