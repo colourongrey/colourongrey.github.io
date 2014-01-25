@@ -1,0 +1,5 @@
+title: colour on grey
+description: Colours on grey photos
+timezone: Europe/London
+permalink: /:title
+exclude: ["Rakefile"]
