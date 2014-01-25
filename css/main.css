@@ -56,3 +56,17 @@ ul {
     font-size: 3em;
   }
 }
+
+/* Smaller */
+@media (max-width: 362px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  ul {
+    column-count: auto;
+    -moz-column-count: auto;
+    -webkit-column-count: auto;
+    list-style: none;
+    text-align: left;
+  }
+}
