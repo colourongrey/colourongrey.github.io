@@ -26,7 +26,7 @@ task :post do
     post.puts "title: \"#{title.gsub(/-/,' ')}\""
     post.puts "tags: #{tags}"
     post.puts "---\n\n"
-    post.puts "![#{title.gsub(/-/,' ')}](/images/#{slug}.jpg \"Words\")"
+    post.puts "[![#{title.gsub(/-/,' ')}](/images/#{slug}.jpg \"Words\")](/images/#{slug}.jpg)"
   end
 end # task :post
 
