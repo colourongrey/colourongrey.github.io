@@ -4,10 +4,10 @@ desc "Begin a new post in _posts}"
 task :post do
   abort("rake aborted: '_posts' directory not found.") unless FileTest.directory?('_posts')
   title = ENV["title"] || "new-post"
-  tags = ENV["tags"] || "[\"#000000\"]"
-  category = ENV["category"] || ""
-  category = "\"#{category.gsub(/-/,' ')}\"" if !category.empty?
+  tags = ENV["tags"] || "[]"
   slug = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+  caption = ENV["caption"] || "Caption"
+  url = "http://colourongrey.github.io/#{slug}/"
   begin
     date = (ENV['date'] ? Time.parse(ENV['date']) : Time.now).strftime('%Y-%m-%d')
   rescue => e
@@ -26,8 +26,10 @@ task :post do
     post.puts "title: \"#{title.gsub(/-/,' ')}\""
     post.puts "tags: #{tags}"
     post.puts "---\n\n"
-    post.puts "[![#{title.gsub(/-/,' ')}](/images/#{slug}.jpg \"Words\")](/images/#{slug}.jpg)"
+    post.puts "[![#{title.gsub(/-/,' ')}](/images/#{slug}.jpg \"#{caption}\")](/images/#{slug}.jpg)"
   end
+
+  `t update 'A new thing: "#{title}" #{url} #colourongrey'`
 end # task :post
 
 
