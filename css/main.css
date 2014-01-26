@@ -4,6 +4,11 @@ body {
   text-align: center;
 }
 
+/* Disable outline highlight on focus */
+h1, a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 h1 {
   font-family: "Raleway Dots";
   font-size: 5em;
